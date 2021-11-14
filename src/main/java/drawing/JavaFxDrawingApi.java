@@ -3,8 +3,6 @@ package drawing;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -78,8 +76,9 @@ public class JavaFxDrawingApi implements DrawingApi {
             Group root = new Group();
             Canvas canvas = new Canvas(width, height);
             GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
-            circles.forEach(circle -> graphicsContext.strokeOval(circle.getX(), circle.getY(), circle.getDiameter(), circle.getDiameter()));
             lines.forEach(line -> graphicsContext.strokeLine(line.getX1(), line.getY1(), line.getX2(), line.getY2()));
+            circles.forEach(circle ->
+                    graphicsContext.fillOval(circle.getX(), circle.getY(), circle.getDiameter(), circle.getDiameter()));
             root.getChildren().add(canvas);
             stage.setScene(new Scene(root));
             stage.show();

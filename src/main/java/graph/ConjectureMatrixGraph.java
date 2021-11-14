@@ -21,6 +21,9 @@ public class ConjectureMatrixGraph extends Graph {
         for (int i = 0; i < verticesCount; i++) {
             for (int j = 0; j < verticesCount; j++) {
                 int x = in.nextInt();
+                if (i >= j) {
+                    continue;
+                }
                 if (x == 1) {
                     graph.get(i).add(j);
                     graph.get(j).add(i);

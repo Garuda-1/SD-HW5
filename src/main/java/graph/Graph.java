@@ -16,7 +16,9 @@ public abstract class Graph {
     }
 
     public void drawGraph() {
+        System.out.println("Define the graph in appropriate format");
         readGraph();
+        System.out.println("Done, rendering...");
         renderGraph();
     }
 
@@ -26,7 +28,7 @@ public abstract class Graph {
         int verticesCount = graph.size();
         float xCenter = drawingApi.getDrawingAreaWidth() / 2F;
         float yCenter = drawingApi.getDrawingAreaHeight() / 2F;
-        float verticesCircleRadius = 0.9F * Math.min(xCenter, yCenter) / 2;
+        float verticesCircleRadius = 0.8F * Math.min(xCenter, yCenter);
         float verticesDiameter = 2 * (float) Math.PI * verticesCircleRadius * 0.5F / verticesCount;
 
         for (int i = 0; i < verticesCount; i++) {

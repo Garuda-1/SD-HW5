@@ -20,8 +20,8 @@ public class AwtDrawingApi extends Frame implements DrawingApi {
 
     @Override
     public void paint(Graphics g) {
-        circles.forEach(c -> g.drawOval((int) c.getX(), (int) c.getY(), (int) c.getDiameter(), (int) c.getDiameter()));
         lines.forEach(l -> g.drawLine((int) l.getX1(), (int) l.getY1(), (int) l.getX2(), (int) l.getY2()));
+        circles.forEach(c -> g.fillOval((int) c.getX(), (int) c.getY(), (int) c.getDiameter(), (int) c.getDiameter()));
     }
 
     @Override

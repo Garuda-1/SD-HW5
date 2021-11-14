@@ -20,8 +20,8 @@ public class EdgeListGraph extends Graph {
             graph.add(new ArrayList<>());
         }
         for (int i = 0; i < edgesCount; i++) {
-            int f = in.nextInt();
-            int t = in.nextInt();
+            int f = in.nextInt() - 1;
+            int t = in.nextInt() - 1;
             graph.get(f).add(t);
             graph.get(t).add(f);
         }
